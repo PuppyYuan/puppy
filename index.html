@@ -2,63 +2,81 @@
 <html>
 
 <head>
-    <title>代码仔</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="css/javascript.fullPage.css" type="text/css"></link>
-    <link rel="stylesheet" href="css/style.css" type="text/css"></link>
+	<title>代码仔</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/jquery.fullPage.css" type="text/css"></link>
+	<link rel="stylesheet" href="css/style.css" type="text/css"></link>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
 </head>
+
 <body>
 
-
-<div id="fullpage">
-	<div class="section " id="section0">
-		<div class="content">
-			<img src="images/logo.png" class="logo"/>
-		</div>
+	<div class="section">
+		<img src="images/logo.png" class="logo" />
 	</div>
-	<div class="section" id="section1">
-		<div class="content">
-			<img src="images/logo.png" class="logo"/>
-		</div>
+	<div class="section">
+		<h3 class="slogan">Code changes everything!</h3>
+		<h3 class="slogan">代码改变世界</h3>
 	</div>
-	<div class="section" id="section2">
-		<!--<div class="slide" id="slide1">
-			<div class="content">
-				<h1>昆明</h1>
-				<p>
-		      		滇池
-				</p>
+	<div class="section">
+		<div class="slide">
+			<img src="images/java1.png" />
+			<div class="code">
+				<pre>public static void main(String[] args){</pre>
+				<pre>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World!");</pre>
+				<pre>}</pre>
 			</div>
 		</div>
-		<div class="slide" id="slide2">
-			<div class="content">
-				<h1>大理</h1>
+		<div class="slide">
+			<img src="images/javascript1.png" />
+			<div class="code">
+				<pre>(function(){</pre>
+				<pre>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello World!');</pre>					
+				<pre>})();</pre>
 			</div>
 		</div>
-		<div class="slide" id="slide2">
-			<div class="content">
-				<h1>More slides!</h1>
+		<div class="slide">
+			<img src="images/mysql1.png" />
+			<div class="code">
+				<pre>select 'Hello World!';</pre>					
 			</div>
-		</div>-->
-		<div class="content">
-			<img src="images/logo.png" class="logo"/>
+		</div>
+		<div class="slide">
+			<img src="images/ps1.png" />
+			<div class="code">
+				<pre>ctrl + N</pre>
+				<pre>T</pre>
+				<pre>Hello World!</pre>
+				<pre>ctrl + alt + shift + w</pre>					
+			</div>
 		</div>
 	</div>
-</div>
-
-<script type="text/javascript" src="js/javascript.fullPage.js"></script>
-<script type="text/javascript">
-	fullpage.initialize('#fullpage', {
-		anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', 'lastPage'],
-		menu: '#menu',
-		css3:true
-	});
-
-</script>
+	<div class="section">
+		<img src="images/javascript.png" class="logo" />
+	</div>
+	<div class="section">
+		<img src="images/ps1.png" class="logo" />
+	</div>
+	<div class="section">
+		<a href="http://www.wanglay.com/">王磊</a>
+		<p class="copy">Copyright © 2016 PuppyYuan(备案号：粤ICP备16048133号-1)</p>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$.fn.fullpage({
+				slidesColor: ['#fbfbea', '#369', '#00b271', '#e8e8ff', '#5ca4ec', ''],
+				anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+				loopBottom: true,
+				loopTop: true
+			});
+		});
+	</script>
 
 </body>
 
