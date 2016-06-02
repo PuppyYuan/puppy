@@ -13,18 +13,21 @@
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+	<script type="text/javascript" src="js/theater.min.js"></script>
 </head>
 
 <body>
 
-	<div class="section">
+	<div class="section section0">
 		<img src="images/logo.png" class="logo" />
 	</div>
-	<div class="section">
-		<h3 class="slogan">Code changes everything!</h3>
-		<h3 class="slogan">代码改变世界</h3>
+	<div class="section section1">
+		<img src="images/slogan.png" />
 	</div>
-	<div class="section">
+	<div class="section section2">
+		<p id="desc"></p>
+	</div>
+	<div class="section section3">
 		<div class="slide">
 			<img src="images/java1.png" />
 			<div class="code">
@@ -57,23 +60,61 @@
 			</div>
 		</div>
 	</div>
-	<div class="section">
-		<img src="images/javascript.png" class="logo" />
-	</div>
-	<div class="section">
+	<div class="section section4">
 		<img src="images/ps1.png" class="logo" />
 	</div>
-	<div class="section">
-		<a href="http://www.wanglay.com/">王磊</a>
+	<div class="section section5">
+		<img src="images/ps1.png" class="logo" />
+	</div>
+	<div class="section section6">
+		<h3 class="linkttl">友情链接</h3>
+		<a href="http://www.wanglay.com/" class="outlink" target="_blank" alt="王磊的个人博客">
+			<img src="images/link1.jpg" alt="王磊的个人博客"/>
+		</a>
+		<a href="http://www.asd.red" class="outlink" target="_blank" alt="旦腾家园">
+			<img src="images/link2.png" alt="旦腾家园"/>
+		</a>
 		<p class="copy">Copyright © 2016 PuppyYuan(备案号：粤ICP备16048133号-1)</p>
 	</div>
 	<script type="text/javascript">
 		$(function(){
+			var theater = new TheaterJS();
+			
+			theater.describe("Puppy", .8, "#desc");
+			
 			$.fn.fullpage({
-				slidesColor: ['#fbfbea', '#369', '#00b271', '#e8e8ff', '#5ca4ec', ''],
-				anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+				slidesColor: ['#fbfbea', '#369', '', '#00b271', '', '#5ca4ec', ''],
+				anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
 				loopBottom: true,
-				loopTop: true
+				loopTop: true,
+				afterLoad: function(anchorLink, index){
+					if(index == 1){
+						$('.section0 img').addClass('logo');
+					}
+					if(index == 2){
+						$('.section1 img').addClass('slogan');
+					}
+					if(index == 3){
+						theater.write("Puppy:Puppy Yuan，单身狗，Java程序员，爱好前端，略懂PS。", 400);			
+					}
+					if(index == 4){
+						
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == 1){
+						$('.section0 img').removeClass('logo');
+					}
+					if(index == '2'){
+						$('.section1 img').removeClass('slogan');
+					}
+					if(index == '3'){
+						theater.erase(100);
+					}
+					if(index == '4'){
+						
+					}
+				}
 			});
 		});
 	</script>
