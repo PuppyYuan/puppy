@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -28,43 +29,23 @@
 		<p id="desc"></p>
 	</div>
 	<div class="section section3">
-		<div class="slide">
-			<img src="images/java1.png" />
-			<div class="code">
-				<pre>public static void main(String[] args){</pre>
-				<pre>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World!");</pre>
-				<pre>}</pre>
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/javascript1.png" />
-			<div class="code">
-				<pre>(function(){</pre>
-				<pre>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello World!');</pre>					
-				<pre>})();</pre>
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/mysql1.png" />
-			<div class="code">
-				<pre>select 'Hello World!';</pre>					
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/ps1.png" />
-			<div class="code">
-				<pre>ctrl + N</pre>
-				<pre>T</pre>
-				<pre>Hello World!</pre>
-				<pre>ctrl + alt + shift + w</pre>					
-			</div>
+		<img src="images/java1.png" />
+		<div class="code" >
+			<pre>public static void main(String[] args){</pre>
+			<pre>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World!");</pre>
+			<pre>}</pre>
 		</div>
 	</div>
 	<div class="section section4">
-		<img src="images/ps1.png" class="logo" />
+		<img src="images/javascript.png" />
+		<div class="code" style="color: #464646;">
+			<pre>(function(){</pre>
+			<pre>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello World!');</pre>					
+			<pre>})();</pre>
+		</div>
 	</div>
 	<div class="section section5">
-		<img src="images/ps1.png" class="logo" />
+		<img src="images/ps1.png" />
 	</div>
 	<div class="section section6">
 		<h3 class="linkttl">友情链接</h3>
@@ -79,14 +60,12 @@
 	<script type="text/javascript">
 		$(function(){
 			var theater = new TheaterJS();
-			
 			theater.describe("Puppy", .8, "#desc");
 			
 			$.fn.fullpage({
 				slidesColor: ['#fbfbea', '#369', '', '#00b271', '', '#5ca4ec', ''],
 				anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
 				loopBottom: true,
-				loopTop: true,
 				afterLoad: function(anchorLink, index){
 					if(index == 1){
 						$('.section0 img').addClass('logo');
