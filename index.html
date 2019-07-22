@@ -19,17 +19,17 @@
 <body>
 
     <div class="section section0">
-        <img src="images/logo.png" class="logo" />
+        <img src="images/logo.png" class="logo logo_shake" />
         <img src="images/down.png" class="down_arr" />
     </div>
     <div class="section section1">
-        <img src="images/slogan.png" />
+        <p class="slogan">Code changes everything.</p>
     </div>
     <div class="section section2">
         <p id="desc"></p>
     </div>
     <div class="section section3">
-        <img src="images/java1.png" />
+        <p class="cate_ttl cate_white_ttl">Java</p>
         <div class="code">
             <pre>public static void main(String[] args){</pre>
             <pre>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World!");</pre>
@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="section section4">
-        <img src="images/javascript.png" />
+        <p class="cate_ttl cate_grey_ttl">Javascript</p>
         <div class="code" style="color: #464646;">
             <pre>(function(){</pre>
             <pre>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello World!');</pre>
@@ -45,10 +45,10 @@
         </div>
     </div>
     <div class="section section5">
-        <img src="images/ps1.png" />
+        <p class="cate_ttl cate_white_ttl">PS</p>
     </div>
     <div class="section section6">
-        <img src="images/game1.png" />
+        <p class="cate_ttl cate_grey_ttl">Game</p>
     </div>
     <div class="section section7">
         <h3 class="linkttl">友情链接</h3>
@@ -63,6 +63,7 @@
     <script type="text/javascript">
         $(function () {
             var theater = new TheaterJS();
+            var oauth = "Puppy:Puppy Yuan，单身狗，Java攻城狮，爱好前端、游戏开发，熟练掌握PS。";
             theater.describe("Puppy", .8, "#desc");
 
             $.fn.fullpage({
@@ -71,13 +72,13 @@
                 loopBottom: true,
                 afterLoad: function (anchorLink, index) {
                     if (index == 1) {
-                        $('.section0 img').addClass('logo');
+                        $('.section0 .logo').addClass('logo_shake');
                     }
                     if (index == 2) {
-                        $('.section1 img').addClass('slogan');
+                        $('.section1 p').addClass('slogan_flash');
                     }
                     if (index == 3) {
-                        theater.write("Puppy:Puppy Yuan，单身狗，Java攻城狮，爱好前端、游戏开发，熟练掌握PS。", 400);
+                        theater.write(oauth, 400);
                     }
                     if (index == 4) {
 
@@ -85,10 +86,10 @@
                 },
                 onLeave: function (index, direction) {
                     if (index == 1) {
-                        $('.section0 img').removeClass('logo');
+                        $('.section0 .logo').removeClass('logo_shake');
                     }
                     if (index == '2') {
-                        $('.section1 img').removeClass('slogan');
+                        $('.section1 p').removeClass('slogan_flash');
                     }
                     if (index == '3') {
                         theater.erase(100);
